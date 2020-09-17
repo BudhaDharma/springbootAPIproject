@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html  xmlns:th=http://www.thymeleaf.org>
+<head>
+<meta charset="UTF-8">
+<title>Signup page</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" scr="/js/signup.js"></script>
+<!--signup styles-->
+	<link rel="stylesheet" type="text/css" href="/css/signup.css"/>
+</head>
+<body>
+<h2>Signup</h2>
+
+<form  method="POST" action="signup">
+	<span class="error" th:text="${error}"> </span>
+  <label>
+    <p class="label-txt">Frist Name</p>
+    <input type="text" name="fname" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  
+   <label>
+    <p class="label-txt">Last Name</p>
+    <input type="text" name="lname" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  
+  <label>
+    <p class="label-txt">Username</p>
+    <input type="text" name="userName" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <label>
+    <p class="label-txt">Password</p>
+    <input type="password" name="password" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <button type="submit">Sign up</button>
+  <div class="card-footer">
+	 <div class="d-flex justify-content-center links">
+		Already have an account?<a href="login">Sign in</a>
+	</div>
+	</div>
+</form>
+
+</body>
+</html>

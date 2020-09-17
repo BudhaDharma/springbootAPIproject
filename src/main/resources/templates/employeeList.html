@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th=http://www.thymeleaf.org>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<div th:include="header.html"></div>
+
+
+
+
+
+	<h1>Employee List</h1>
+	<hr>
+
+	<table id="example" class="table table-striped table-bordered" style="width:100%">
+
+		<thead>
+			<tr>
+				<td>FirstName</td>
+				<td>LastName</td>
+				<td>Country</td>
+				<td>Phone</td>
+				<td>Action</td>
+			</tr>
+		</thead>
+
+
+		<tbody>
+
+			<tr th:each="emp : ${elist}">
+				<td th:text="${emp.fname}"></td>
+				<td th:text="${emp.lname}">LastName</td>
+				<td th:text="${emp.address.country}">Country</td>
+				<td th:text="${emp.phone}">Phone</td>
+				<td><a th:href="@{'/edit/'+${emp.id}}">Edit</a> | <a th:href="@{'/delete/'+${emp.id}}">Delete</a></td>
+			</tr>
+			
+			
+			
+		</tbody>
+
+
+	
+	</table>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+
+</script>
+
+</body>
+</html>

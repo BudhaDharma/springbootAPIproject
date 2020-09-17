@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html  xmlns:th=http://www.thymeleaf.org>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:include="header.html"></div>
+
+
+<form th:action="@{/employee}" method="POST" th:object="${employee}">
+
+<fieldset>
+<legend>Employee</legend>
+
+
+<div>
+First Name <input type="text" th:field="*{fname}">
+</div>
+<div>
+Last Name <input type="text" th:field="*{lname}">
+</div>
+
+<div>
+Gender <label ><input type="radio" th:field="*{gender}" th:value="male" checked="true">Male</label>
+	<label ><input type="radio" th:field="*{gender}" th:value="female">Female</label>
+	<label ><input type="radio" th:field="*{gender}" th:value="other">Other</label>
+</div>
+<div>
+Date of Birth <input type="date" th:field="*{dob}">
+</div>
+<div>
+JoinDate <input type="date" th:field="*{joindate}">
+</div>
+
+<div>
+Company <input type="text" th:field="*{company}">
+</div>
+<div>
+Position <input type="text" th:field="*{post}">
+</div>
+
+<div>
+Email <input type="email" th:field="*{email}">
+</div>
+<div>
+Phone <input type="text" th:field="*{phone}">
+</div>
+
+<div>
+Salary <input type="text" th:field="*{salary}">
+</div>
+</fieldset>
+
+
+<fieldset>
+<legend>Address</legend>
+<div>
+Country <select th:field="*{address.country}">
+		<option th:value="nep">Nepal</option>
+		<option th:value="ind">India</option>
+		<option th:value="chn">China</option>
+		<option th:value="jap">Japan</option>
+		<option th:value="usa">United State</option>
+</select>
+</div>
+<div>
+State <input type="text" th:field="*{address.state}">
+</div>
+<div>
+City <input type="text" th:field="*{address.city}">
+</div>
+<div>
+Zip Code <input type="text" th:field="*{address.zipcode}">
+</div>
+</fieldset>
+
+<div>
+<input type="hidden" th:field="*{id}">
+<input type="submit" name="save" value="Save Employee">
+</div>
+</form>
+</body>
+</html>
